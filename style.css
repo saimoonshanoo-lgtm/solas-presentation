@@ -1,0 +1,45 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Sarabun:wght@300;400;600;700&display=swap');
+
+:root {
+    --accent: #f97316;
+    --sub-accent: #38bdf8;
+    --bg-dark: #0f172a;
+}
+
+.reveal { font-family: 'Sarabun', sans-serif; background-color: var(--bg-dark); }
+.reveal h1, .reveal h2, .reveal h3 { 
+    font-family: 'Poppins', sans-serif; 
+    text-transform: uppercase; 
+    font-weight: 800; 
+    letter-spacing: 2px;
+}
+
+.text-orange { color: var(--accent); }
+.text-blue { color: var(--sub-accent); }
+.thai-text { color: #cbd5e1; text-align: left; line-height: 1.6; font-size: 0.85em; font-weight: 300;}
+
+/* Professional Sidebar Border */
+.glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(15px);
+    border-left: 6px solid var(--accent);
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.split { display: flex; gap: 50px; align-items: center; }
+.split > div { flex: 1; }
+
+.img-container {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+.img-container img { width: 100%; height: 100%; display: block; object-fit: cover;}
+
+/* Remove Default Reveal Controls if you want a cleaner look, 
+   but we'll keep them styled for widescreen */
+.reveal .controls { color: var(--accent); }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <title>SOLAS PRO - AMCOL Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides" id="presentation-core"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script>
+        // 1. Define the order of your separated files here
+       const presentationFiles = [
+    '00_intro.html',
+    '01_table_of_contents.html',
+    '02_chapter_1.html',
+    '03_chapters_2-1_2-2.html',
+    '04_chapter_3.html',
+    '05_chapter_4.html',
+    '06_chapter_5.html',
+    '07_chapter_6.html',
+    '08_chapter_7.html',
+    '09_chapter_8.html',
+    '10_chapter_9.html',
+    '11_chapter_10_11.html',
+    '12_chapter_12.html',
+    '13_chapter_13.html',
+    '14_chapter_14.html',
+    '15_chapter_15.html',
+    '16_conclusion.html'
+];
+
+        // 2. Fetch function to load them dynamically (similar to fetching an API)
+        async function buildPresentation() {
+            const coreContainer = document.getElementById('presentation-core');
+            
+            for (const file of presentationFiles) {
+                const response = await fetch(file);
+                const htmlContent = await response.text();
+                coreContainer.innerHTML += htmlContent; 
+            }
+
+            // 3. Initialize Reveal ONLY AFTER all files are loaded
+            Reveal.initialize({
+                hash: true,
+                controls: true,
+                progress: true,
+                center: true,
+                width: 1920,
+                height: 1080,
+                margin: 0.04,
+                minScale: 0.1,
+                maxScale: 3.0,
+                transition: 'slide', 
+                backgroundTransition: 'fade',
+                fragments: true
+            });
+        }
+
+        // Run the builder
+        buildPresentation();
+    </script>
+</body>
+</html>

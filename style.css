@@ -43,3 +43,17 @@
 /* Remove Default Reveal Controls if you want a cleaner look, 
    but we'll keep them styled for widescreen */
 .reveal .controls { color: var(--accent); }
+/* แก้ไขการแสดงผลบนมือถือ */
+.reveal .slides section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding: 20px !important;
+}
+
+/* ทำให้เนื้อหาอยู่กึ่งกลางและไม่ชิดขอบบนเกินไป */
+.glass-card {
+    width: 90% !important;
+    margin: 0 auto !important;
+}

@@ -1,154 +1,200 @@
-<section>
-    <style>
-        .flashback-effect {
-            animation: flashback 4s ease-in-out forwards;
-            filter: grayscale(80%) sepia(30%) contrast(1.2);
-        }
-        @keyframes flashback {
-            0% { opacity: 0; filter: grayscale(100%) brightness(0.3); }
-            50% { opacity: 0.5; filter: grayscale(80%) sepia(30%) brightness(0.6); }
-            100% { opacity: 1; filter: grayscale(30%) brightness(1); }
-        }
-        
-        /* NEW: SOLAS Cinematic Overlay Text */
-        .solas-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            pointer-events: none; /* ป้องกันไม่ให้ตัวหนังสือบังการกดวิดีโอ */
-            opacity: 0;
-            animation: textReveal 5s ease-in-out forwards;
-            animation-delay: 1.5s; /* หน่วงเวลาให้วิดีโอเล่นก่อนนิดนึงแล้วค่อยโชว์คำว่า SOLAS */
-        }
-        @keyframes textReveal {
-            0% { opacity: 0; transform: translate(-50%, -45%) scale(0.9); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        }
+<section data-background-image="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1920" data-background-opacity="0.3">
 
-        .purpose-box {
-            border-left: 5px solid #eab308;
-            background: rgba(15, 23, 42, 0.8);
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 8px;
-        }
-    </style>
+<h1 style="font-size: 4em; text-shadow: 0 10px 20px rgba(0,0,0,0.8);">อนุสัญญา <span class="text-orange">SOLAS</span></h1>
 
-    <section data-background-image="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1920" data-background-opacity="0.3">
-        <h1 style="font-size: 4em; text-shadow: 0 10px 20px rgba(0,0,0,0.8);">อนุสัญญา <span class="text-orange">SOLAS</span></h1>
-        <h3 style="text-transform: none; color: #e2e8f0;">ความปลอดภัยแห่งชีวิตในทะเล</h3>
+<h3 style="text-transform: none; color: #e2e8f0;">ความปลอดภัยแห่งชีวิตในทะเล</h3>
 
-        <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
-            <div class="glass-card thai-text" style="border-left-color: #38bdf8; padding: 20px 40px; margin-top: 0; min-width: 300px;">
-                <p style="color: #38bdf8; font-family: 'Poppins'; font-weight: 800; margin-bottom: 10px; font-size: 1.2em;">นำเสนอ</p>
-                <p style="font-size: 1.2em; font-weight: 600; color: white; margin: 0;">อาจารย์ ศุภชัย สวมชัยภูมิ</p>
-            </div>
 
-            <div class="glass-card thai-text" style="border-left-color: #f97316; padding: 20px 40px; margin-top: 0; min-width: 300px;">
-                <p style="color: #f97316; font-family: 'Poppins'; font-weight: 800; margin-bottom: 10px; font-size: 1.2em;">ผู้จัดทำ</p>
-                <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 1.1em;">
-                    <li style="color: white; margin-bottom: 8px;">ไซมอน แสงอู เลขที่ 29</li>
-                    <li style="color: white; margin-bottom: 8px;">ภูรินท์ ดอกเขารัมย์ เลขที่ 1</li>
-                     <li style="color: white; margin-bottom: 8px;">อัศนัย ใจธรรม เลขที่ 12</li>
-                </ul>
-            </div>
-        </div>
-        
-        <p style="margin-top: 60px; font-family: 'Poppins'; color: #94a3b8; letter-spacing: 3px; font-size: 0.55em; font-weight: 600;">ASIAN MARITIME TECHNOLOGICAL COLLEGE</p>
-    </section>
 
-    <section data-transition="convex">
-        <h3 style="text-align: left;">15 April 1912:<br><span class="text-orange">The Catalyst</span></h3>
-        <div class="split">
-            <div class="glass-card thai-text">
-                <p><strong>โศกนาฏกรรมเรือ RMS Titanic</strong></p>
-                <p>การอับปางของเรือไททานิกหลังชนภูเขาน้ำแข็ง ทำให้มีผู้เสียชีวิตกว่า 1,500 คน เหตุการณ์นี้ตีแผ่ข้อบกพร่องร้ายแรง:</p>
-                <ul>
-                    <li class="fragment fade-left">เรือมีจำนวนเรือชูชีพไม่เพียงพอสำหรับผู้โดยสารทุกคน</li>
-                    <li class="fragment fade-left">ไม่มีการกำหนดให้เจ้าหน้าที่วิทยุต้องเข้ายามตลอด 24 ชั่วโมง</li>
-                    <li class="fragment fade-left">ขาดมาตรฐานการแบ่งผนังห้องกันน้ำ (Watertight bulkheads)</li>
-                </ul>
-            </div>
-            
-            <div class="img-container fragment zoom-in" style="border-color: #f97316; position: relative;">
-                
-                <div class="flashback-effect" style="width: 100%; height: 100%;">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/PbI7CloBQ6Y?autoplay=1&mute=1&playlist=PbI7CloBQ6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                
-                <div class="solas-overlay">
-                    <h1 style="font-size: 4.5em; color: rgba(255, 255, 255, 0.65); text-shadow: 0px 5px 25px rgba(0,0,0,1); margin: 0; letter-spacing: 15px; font-weight: 900; font-family: 'Poppins', sans-serif;">SOLAS</h1>
-                </div>
+<div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
 
-            </div>
-        </div>
-    </section>
 
-    <section data-transition="slide">
-        <h3 style="text-align: left;">20 January 1914:<br><span class="text-blue">The First SOLAS</span></h3>
-        <div class="glass-card thai-text">
-            <p><strong>การก่อกำเนิดอนุสัญญา SOLAS ฉบับแรก</strong></p>
-            <p>ตัวแทนจาก 13 ประเทศมหาอำนาจทางทะเลได้ร่วมประชุมที่กรุงลอนดอน และลงนามในอนุสัญญาฉบับแรก โดยมีสาระสำคัญคือ:</p>
-            <ul>
-                <li class="fragment fade-up">บังคับให้เรือต้องมีเรือชูชีพเพียงพอสำหรับ <strong>"ทุกคนบนเรือ"</strong></li>
-                <li class="fragment fade-up">บังคับให้เรือโดยสารต้องรักษาการเฝ้าระวังทางวิทยุตลอดเวลา</li>
-                <li class="fragment fade-up">ก่อตั้งหน่วยลาดตระเวนน้ำแข็งสากล (International Ice Patrol)</li>
-            </ul>
-        </div>
-        
-        <div class="purpose-box thai-text fragment fade-up">
-            <p style="font-size: 1.1em; color: #eab308; margin: 0; font-weight: bold;">จุดประสงค์ที่แท้จริงของ SOLAS:</p>
-            <p style="font-size: 0.9em; color: #cbd5e1; margin-top: 10px;">
-                เพื่อกำหนดมาตรฐานขั้นต่ำด้านโครงสร้าง อุปกรณ์ และการปฏิบัติงาน เพื่อให้มั่นใจว่าโศกนาฏกรรมเช่นนี้จะไม่เกิดขึ้นซ้ำรอย กฎหมายนี้จึงเขียนขึ้นจาก "ชีวิต" ของผู้คน
-            </p>
-        </div>
-    </section>
+<div class="glass-card thai-text" style="border-left-color: #38bdf8; padding: 20px 40px; margin-top: 0; min-width: 300px;">
 
-    <section data-transition="slide">
-        <h3 style="text-align: left;">1929 - 1960:<br><span class="text-orange">The Evolution</span></h3>
-        <div class="glass-card thai-text">
-            <p>กฎหมายความปลอดภัยทางทะเลได้รับการพัฒนาอย่างต่อเนื่องตามยุคสมัย:</p>
-            <ul>
-                <li><strong>SOLAS 1929:</strong> บังคับใช้ครั้งแรกอย่างเป็นทางการ เพิ่มข้อกำหนดเรื่องการป้องกันอัคคีภัย</li>
-                <li><strong>SOLAS 1948:</strong> ขยายขอบเขตข้อบังคับให้ครอบคลุมเรือสินค้าที่มีขนาดตั้งแต่ 500 ตันกรอสขึ้นไป ไม่ใช่แค่เรือโดยสาร</li>
-                <li><strong>SOLAS 1960:</strong> เป็นอนุสัญญาฉบับแรกที่ถูกจัดทำขึ้นภายใต้การดูแลขององค์การ <strong>IMO</strong> เพื่อรองรับเทคโนโลยีใหม่ เช่น เรดาร์</li>
-            </ul>
-        </div>
-    </section>
+<p style="color: #38bdf8; font-family: 'Poppins'; font-weight: 800; margin-bottom: 10px; font-size: 1.2em;">นำเสนอ</p>
 
-    <section data-transition="slide">
-        <h3 style="text-align: left;">1 November 1974:<br><span class="text-blue">The Modern SOLAS</span></h3>
-        <div class="split">
-            <div class="glass-card thai-text" style="border-left-color: #38bdf8;">
-                <p><strong>SOLAS 1974 (ฉบับปัจจุบัน)</strong></p>
-                <p>รับรองเมื่อวันที่ 1 พฤศจิกายน 1974 และมีผลบังคับใช้ในวันที่ <strong>25 พฤษภาคม 1980</strong></p>
-                <ul>
-                    <li class="fragment fade-right">นำระบบ <strong>Tacit Acceptance (การยอมรับโดยปริยาย)</strong> มาใช้</li>
-                    <li class="fragment fade-right">แก้ปัญหาความล่าช้าในการออกกฎหมาย โดยให้ข้อเสนอแก้ไขใหม่มีผลบังคับใช้อัตโนมัติในวันที่กำหนด เว้นแต่จะมีประเทศสมาชิกคัดค้านเกิน 1 ใน 3</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<p style="font-size: 1.2em; font-weight: 600; color: white; margin: 0;">อาจารย์ ศุภชัย สวมชัยภูมิ</p>
 
-    <section data-transition="zoom" data-background-color="#0f172a">
-        <h3 style="text-align: left;" class="text-orange">Information Sources</h3>
-        <div class="glass-card thai-text" style="border-left: none; border-top: 5px solid #10b981;">
-            <p>เนื้อหาทั้งหมดในสไลด์นำเสนอฉบับนี้ อ้างอิงจากเอกสารและเว็บไซต์ทางการขององค์การทางทะเลระหว่างประเทศ (IMO):</p>
-            <ol style="margin-top: 20px;">
-                <li style="margin-bottom: 20px;">
-                    <strong>หนังสืออ้างอิงหลัก:</strong> SOLAS Consolidated Edition 2014
-                </li>
-                <li style="margin-bottom: 20px;">
-                    <strong>ประวัติความเป็นมาของ SOLAS:</strong><br>
-                    <a href="https://www.imo.org" target="_blank" class="source-link">Official IMO History Portal</a>
-                </li>
-                <li>
-                    <strong>การอัปเดตข้อบังคับใหม่:</strong><br>
-                    <span style="font-size: 0.8em; color: #94a3b8;">อ้างอิงจากมติการประชุม MSC Resolutions ล่าสุดจากเว็บ IMO</span>
-                </li>
-            </ol>
-        </div>
-    </section>
+</div>
+
+
+
+<div class="glass-card thai-text" style="border-left-color: #f97316; padding: 20px 40px; margin-top: 0; min-width: 300px;">
+
+<p style="color: #f97316; font-family: 'Poppins'; font-weight: 800; margin-bottom: 10px; font-size: 1.2em;">ผู้จัดทำ</p>
+
+<ul style="list-style-type: none; padding: 0; margin: 0; font-size: 1.1em;">
+
+<li style="color: white; margin-bottom: 8px;">ไซมอน แสงอู เลขที่ 29</li>
+
+<li style="color: white; margin-bottom: 8px;">ภูรินท์ ดอกเขารัมย์ เลขที่ 1</li>
+
+<li style="color: white; margin-bottom: 8px;">อัศนัย ใจธรรม เลขที่ 12</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+<p style="margin-top: 60px; font-family: 'Poppins'; color: #94a3b8; letter-spacing: 3px; font-size: 0.55em; font-weight: 600;">ASIAN MARITIME TECHNOLOGICAL COLLEGE</p>
+
+</section>
+
+
+
+<section data-transition="convex">
+
+<h3 style="text-align: left;">15 April 1912:<br><span class="text-orange">The Catalyst</span></h3>
+
+<div class="split">
+
+<div class="glass-card thai-text">
+
+<p><strong>โศกนาฏกรรมเรือ RMS Titanic</strong></p>
+
+<p>การอับปางของเรือไททานิกหลังชนภูเขาน้ำแข็ง ทำให้มีผู้เสียชีวิตกว่า 1,500 คน เหตุการณ์นี้ตีแผ่ข้อบกพร่องร้ายแรง:</p>
+
+<ul>
+
+<li class="fragment fade-left">เรือมีจำนวนเรือชูชีพไม่เพียงพอสำหรับผู้โดยสารทุกคน</li>
+
+<li class="fragment fade-left">ไม่มีการกำหนดให้เจ้าหน้าที่วิทยุต้องเข้ายามตลอด 24 ชั่วโมง</li>
+
+<li class="fragment fade-left">ขาดมาตรฐานการแบ่งผนังห้องกันน้ำ (Watertight bulkheads)</li>
+
+</ul>
+
+</div>
+
+
+<div class="img-container fragment zoom-in" style="border-color: #f97316;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PbI7CloBQ6Y?si=fP6MZPMtlIRSvSLx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section data-transition="slide">
+
+<h3 style="text-align: left;">20 January 1914:<br><span class="text-blue">The First SOLAS</span></h3>
+
+<div class="glass-card thai-text">
+
+<p><strong>การก่อกำเนิดอนุสัญญา SOLAS ฉบับแรก</strong></p>
+
+<p>ตัวแทนจาก 13 ประเทศมหาอำนาจทางทะเลได้ร่วมประชุมที่กรุงลอนดอน และลงนามในอนุสัญญาฉบับแรก โดยมีสาระสำคัญคือ:</p>
+
+<ul>
+
+<li class="fragment fade-up">บังคับให้เรือต้องมีเรือชูชีพเพียงพอสำหรับ <strong>"ทุกคนบนเรือ"</strong></li>
+
+<li class="fragment fade-up">บังคับให้เรือโดยสารต้องรักษาการเฝ้าระวังทางวิทยุตลอดเวลา</li>
+
+<li class="fragment fade-up">ก่อตั้งหน่วยลาดตระเวนน้ำแข็งสากล (International Ice Patrol)</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<section data-transition="slide">
+
+<h3 style="text-align: left;">1929 - 1960:<br><span class="text-orange">The Evolution</span></h3>
+
+<div class="glass-card thai-text">
+
+<p>กฎหมายความปลอดภัยทางทะเลได้รับการพัฒนาอย่างต่อเนื่องตามยุคสมัย:</p>
+
+<ul>
+
+<li><strong>SOLAS 1929:</strong> บังคับใช้ครั้งแรกอย่างเป็นทางการ เพิ่มข้อกำหนดเรื่องการป้องกันอัคคีภัย</li>
+
+<li><strong>SOLAS 1948:</strong> ขยายขอบเขตข้อบังคับให้ครอบคลุมเรือสินค้าที่มีขนาดตั้งแต่ 500 ตันกรอสขึ้นไป ไม่ใช่แค่เรือโดยสาร</li>
+
+<li><strong>SOLAS 1960:</strong> เป็นอนุสัญญาฉบับแรกที่ถูกจัดทำขึ้นภายใต้การดูแลขององค์การ <strong>IMO</strong> เพื่อรองรับเทคโนโลยีใหม่ เช่น เรดาร์</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<section data-transition="slide">
+
+<h3 style="text-align: left;">1 November 1974:<br><span class="text-blue">The Modern SOLAS</span></h3>
+
+<div class="split">
+
+<div class="glass-card thai-text" style="border-left-color: #38bdf8;">
+
+<p><strong>SOLAS 1974 (ฉบับปัจจุบัน)</strong></p>
+
+<p>รับรองเมื่อวันที่ 1 พฤศจิกายน 1974 และมีผลบังคับใช้ในวันที่ <strong>25 พฤษภาคม 1980</strong></p>
+
+<ul>
+
+<li class="fragment fade-right">นำระบบ <strong>Tacit Acceptance (การยอมรับโดยปริยาย)</strong> มาใช้</li>
+
+<li class="fragment fade-right">แก้ปัญหาความล่าช้าในการออกกฎหมาย โดยให้ข้อเสนอแก้ไขใหม่มีผลบังคับใช้อัตโนมัติในวันที่กำหนด เว้นแต่จะมีประเทศสมาชิกคัดค้านเกิน 1 ใน 3</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section data-transition="zoom" data-background-color="#0f172a">
+
+<h3 style="text-align: left;" class="text-orange">Information Sources</h3>
+
+<div class="glass-card thai-text" style="border-left: none; border-top: 5px solid #10b981;">
+
+<p>เนื้อหาทั้งหมดในสไลด์นำเสนอฉบับนี้ อ้างอิงจากเอกสารและเว็บไซต์ทางการขององค์การทางทะเลระหว่างประเทศ (IMO):</p>
+
+<ol style="margin-top: 20px;">
+
+<li style="margin-bottom: 20px;">
+
+<strong>หนังสืออ้างอิงหลัก:</strong> SOLAS Consolidated Edition 2014
+
+</li>
+
+<li style="margin-bottom: 20px;">
+
+<strong>ประวัติความเป็นมาของ SOLAS:</strong><br>
+
+<a href="https://www.imo.org" target="_blank" class="source-link">Official IMO History Portal</a>
+
+</li>
+
+<li>
+
+<strong>การอัปเดตข้อบังคับใหม่:</strong><br>
+
+<span style="font-size: 0.8em; color: #94a3b8;">อ้างอิงจากมติการประชุม MSC Resolutions ล่าสุดจากเว็บ IMO</span>
+
+</li>
+
+</ol>
+
+</div>
+
 </section>

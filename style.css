@@ -43,3 +43,80 @@
 /* Remove Default Reveal Controls if you want a cleaner look, 
    but we'll keep them styled for widescreen */
 .reveal .controls { color: var(--accent); }
+/* =========================================
+   MOBILE & TABLET RESPONSIVE DESIGN (PORTRAIT)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Stack the split layout vertically instead of side-by-side */
+    .split {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        max-height: 100% !important; /* Remove height limits so it fits */
+        width: 100% !important;
+    }
+
+    /* 2. Make glass cards and image containers take full width */
+    .split > div,
+    .glass-card {
+        width: 100% !important;
+        padding: 15px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. Adjust text sizes to be readable but not take up too much vertical space */
+    .glass-card {
+        font-size: 0.9rem !important; 
+    }
+    
+    h3 {
+        font-size: 1.5em !important;
+        line-height: 1.2 !important;
+        text-align: center !important; /* Centers titles on mobile */
+    }
+
+    /* 4. Prevent images from blowing up the screen vertically */
+    .split img {
+        height: 160px !important; 
+        min-height: 160px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* 5. Adjust Reveal.js controls so they don't overlap content */
+    .reveal .controls {
+        bottom: 5px !important;
+        right: 5px !important;
+    }
+}
+/* =========================================
+   SUPERSIZED FONTS FOR 1920x1080 CANVAS
+   ========================================= */
+   
+.glass-card {
+    font-size: 36px; /* Massive pixel size for base text */
+    line-height: 1.6;
+}
+
+.glass-card p {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.auto-appear li {
+    font-size: 32px; /* Slightly smaller than main text for list items */
+    font-weight: 500;
+    margin-bottom: 24px; /* Extra breathing room between bullet points */
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
+/* Make sure your headings are giant so they stand out */
+h2 {
+    font-size: 80px !important; 
+}
+
+h3 {
+    font-size: 60px !important; 
+}

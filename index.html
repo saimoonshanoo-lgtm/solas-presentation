@@ -20,27 +20,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
     <script>
         // 1. Define the order of your separated files here
-       const presentationFiles = [
-    '00_intro.html',
-    '01_table_of_contents.html',
-    '02_chapter_1.html',
-    '03_chapters_2-1_2-2.html',
-    '04_chapter_3.html',
-    '05_chapter_4.html',
-    '06_chapter_5.html',
-    '07_chapter_6.html',
-    '08_chapter_7.html',
-    '09_chapter_8.html',
-    '10_chapter_9.html',
-    '11_chapter_10_11.html',
-    '12_chapter_12.html',
-    '13_chapter_13.html',
-    '14_chapter_14.html',
-    '15_chapter_15.html',
-    '16_conclusion.html'
-];
+        const presentationFiles = [
+            '00_intro.html',
+            '01_table_of_contents.html',
+            '02_chapter_1.html',
+            '03_chapters_2-1_2-2.html',
+            '04_chapter_3.html',
+            '05_chapter_4.html',
+            '06_chapter_5.html',
+            '07_chapter_6.html',
+            '08_chapter_7.html',
+            '09_chapter_8.html',
+            '10_chapter_9.html',
+            '11_chapter_10_11.html',
+            '12_chapter_12.html',
+            '13_chapter_13.html',
+            '14_chapter_14.html',
+            '15_chapter_15.html',
+            '16_conclusion.html'
+        ];
 
-        // 2. Fetch function to load them dynamically (similar to fetching an API)
+        // 2. Fetch function to load them dynamically
         async function buildPresentation() {
             const coreContainer = document.getElementById('presentation-core');
             
@@ -50,17 +50,32 @@
                 coreContainer.innerHTML += htmlContent; 
             }
 
-         Reveal.initialize({
-    // ... การตั้งค่าอื่นๆ ของคุณ ...
-    
-    width: 1920,      // ตั้งค่าความกว้างระดับ Full HD
-    height: 1080,     // ตั้งค่าความสูงระดับ Full HD
-    margin: 0,        // <--- เวทมนตร์อยู่ตรงนี้! เปลี่ยนให้เป็น 0 เพื่อลบขอบรอบสไลด์ทิ้งทั้งหมด
-    minScale: 0.2,
-    maxScale: 2.0,    // ยอมให้สไลด์ซูมขยายทะลุขอบจอได้
-    
-    // ...
-});
+            // 3. Initialize Reveal.js
+            Reveal.initialize({
+                width: 1920,      
+                height: 1080,     
+                margin: 0,        
+                minScale: 0.2,
+                maxScale: 2.0,    
+            });
+
+            // 4. THE NEW ANIMATION SCRIPT
+            // This listens for when you change slides and triggers the fade-in effect automatically
+            Reveal.on('slidechanged', event => {
+                const fragments = event.currentSlide.querySelectorAll('.auto-appear li');
+                
+                // Reset opacity to 0
+                fragments.forEach(fragment => {
+                    fragment.style.opacity = "0";
+                });
+
+                // Trigger the fade-in with a 1.5-second delay between each sentence
+                fragments.forEach((fragment, index) => {
+                    setTimeout(() => {
+                        fragment.style.opacity = "1";
+                    }, (index + 1) * 1500); 
+                });
+            });
         }
 
         // Run the builder

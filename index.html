@@ -2,9 +2,9 @@
 <html lang="th">
 <head>
     <meta charset="utf-8">
-    <title>SOLAS PRO - AMCOL Presentation</title>
+    <title>SOLAS - Safety of Life at Sea Convention</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css">
@@ -58,6 +58,16 @@
                 minScale: 0.2,
                 maxScale: 2.0,    
             });
+             // Add this inside your buildPresentation function, after Reveal.initialize
+            Reveal.on('slidechanged', event => {
+                const footer = document.getElementById('teaching-footer');
+                // If it's the very first slide (index 0), hide the footer
+                if (event.indexh === 0) {
+                    footer.style.opacity = '0';
+                } else {
+                    footer.style.opacity = '1';
+                }
+            });
 
             // 4. THE NEW ANIMATION SCRIPT
             // This listens for when you change slides and triggers the fade-in effect automatically
@@ -81,5 +91,36 @@
         // Run the builder
         buildPresentation();
     </script>
+    <script>
+        // ... (Your other fetch code and Reveal.initialize remain above this) ...
+
+        // The Fast Auto-Animation Script
+        Reveal.on('slidechanged', event => {
+            const fragments = event.currentSlide.querySelectorAll('.auto-appear li');
+            
+            // Reset opacity to 0 instantly when changing slides
+            fragments.forEach(fragment => {
+                fragment.style.opacity = "0";
+            });
+
+            // Fade them in with a fast 400ms delay between each one
+            fragments.forEach((fragment, index) => {
+                setTimeout(() => {
+                    fragment.style.opacity = "1";
+                }, (index + 1) * 400); 
+            });
+        });
+    </script>
+    <body>
+    <div id="teaching-footer">
+        <div class="footer-left">© 2026 Ajarn Suphachai Suamchaiphum | SOLAS</div>
+        <div class="footer-right">AMCOL - Asian Maritime Technological College</div>
+    </div>
+
+    <div class="reveal">
+        <div class="slides" id="presentation-core">
+            </div>
+    </div>
+   
 </body>
 </html>

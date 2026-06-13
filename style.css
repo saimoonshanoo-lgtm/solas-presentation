@@ -120,3 +120,62 @@ h2 {
 h3 {
     font-size: 60px !important; 
 }
+/* =========================================
+   BALANCED FONTS FOR 1920x1080 CANVAS
+   (Perfect for dense text and split layouts)
+   ========================================= */
+   
+.glass-card {
+    font-size: 45px; /* Brought down from 56px */
+    line-height: 1.4;
+    padding: 30px; /* Keeps the text from hitting the borders */
+}
+
+.glass-card p {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.auto-appear li {
+    font-size: 40px; /* Brought down from 48px */
+    font-weight: 500;
+    margin-bottom: 15px; /* Tighter spacing so lists don't push images off screen */
+    opacity: 0; 
+    transition: opacity 0.1s ease-in-out; 
+}
+
+/* Adjusted headings so they don't dominate the screen */
+h2 {
+    font-size: 80px !important; 
+}
+
+h3 {
+    font-size: 55px !important; 
+}
+/* =========================================
+   PERSISTENT TEACHING FOOTER
+   ========================================= */
+#teaching-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    right: 40px;
+    z-index: 1000; /* Stays on top of the slides */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; /* Small and professional */
+    color: #475569; /* Subtle gray so it doesn't distract from the main text */
+    pointer-events: none; /* Allows you to click "through" it to use slide controls */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Very faint line above it */
+    padding-top: 10px;
+}
+
+.footer-left {
+    font-weight: 600;
+}
+
+.footer-right {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

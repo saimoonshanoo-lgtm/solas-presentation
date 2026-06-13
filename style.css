@@ -19,14 +19,23 @@
 .text-blue { color: var(--sub-accent); }
 .thai-text { color: #cbd5e1; text-align: left; line-height: 1.6; font-size: 0.85em; font-weight: 300;}
 
-/* Professional Sidebar Border */
+/* =========================================
+   DESKTOP LAYOUT & COMPONENTS
+   ========================================= */
 .glass-card {
     background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(15px);
     border-left: 6px solid var(--accent);
-    padding: 40px;
+    padding: 30px;
     border-radius: 0 20px 20px 0;
     box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    font-size: 45px; 
+    line-height: 1.4;
+}
+
+.glass-card p {
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
 .split { display: flex; gap: 50px; align-items: center; }
@@ -40,118 +49,19 @@
 }
 .img-container img { width: 100%; height: 100%; display: block; object-fit: cover;}
 
-/* Remove Default Reveal Controls if you want a cleaner look, 
-   but we'll keep them styled for widescreen */
-.reveal .controls { color: var(--accent); }
-/* =========================================
-   MOBILE & TABLET RESPONSIVE DESIGN (PORTRAIT)
-   ========================================= */
-@media screen and (max-width: 768px) {
-    
-    /* 1. Stack the split layout vertically instead of side-by-side */
-    .split {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        max-height: 100% !important; /* Remove height limits so it fits */
-        width: 100% !important;
-    }
-
-    /* 2. Make glass cards and image containers take full width */
-    .split > div,
-    .glass-card {
-        width: 100% !important;
-        padding: 15px !important;
-        margin: 0 auto !important;
-    }
-
-    /* 3. Adjust text sizes to be readable but not take up too much vertical space */
-    .glass-card {
-        font-size: 0.9rem !important; 
-    }
-    
-    h3 {
-        font-size: 1.5em !important;
-        line-height: 1.2 !important;
-        text-align: center !important; /* Centers titles on mobile */
-    }
-
-    /* 4. Prevent images from blowing up the screen vertically */
-    .split img {
-        height: 160px !important; 
-        min-height: 160px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-    }
-
-    /* 5. Adjust Reveal.js controls so they don't overlap content */
-    .reveal .controls {
-        bottom: 5px !important;
-        right: 5px !important;
-    }
-}
-/* =========================================
-   SUPERSIZED FONTS FOR 1920x1080 CANVAS
-   ========================================= */
-   
-.glass-card {
-    font-size: 36px; /* Massive pixel size for base text */
-    line-height: 1.6;
-}
-
-.glass-card p {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
 .auto-appear li {
-    font-size: 32px; /* Slightly smaller than main text for list items */
+    font-size: 40px; 
     font-weight: 500;
-    margin-bottom: 24px; /* Extra breathing room between bullet points */
-    opacity: 0; 
-    transition: opacity 1s ease-in-out; 
-}
-
-/* Make sure your headings are giant so they stand out */
-h2 {
-    font-size: 80px !important; 
-}
-
-h3 {
-    font-size: 60px !important; 
-}
-/* =========================================
-   BALANCED FONTS FOR 1920x1080 CANVAS
-   (Perfect for dense text and split layouts)
-   ========================================= */
-   
-.glass-card {
-    font-size: 45px; /* Brought down from 56px */
-    line-height: 1.4;
-    padding: 30px; /* Keeps the text from hitting the borders */
-}
-
-.glass-card p {
-    font-size: 45px;
-    margin-bottom: 20px;
-}
-
-.auto-appear li {
-    font-size: 40px; /* Brought down from 48px */
-    font-weight: 500;
-    margin-bottom: 15px; /* Tighter spacing so lists don't push images off screen */
+    margin-bottom: 15px; 
     opacity: 0; 
     transition: opacity 0.1s ease-in-out; 
 }
 
-/* Adjusted headings so they don't dominate the screen */
-h2 {
-    font-size: 80px !important; 
-}
+h2 { font-size: 80px !important; }
+h3 { font-size: 55px !important; }
 
-h3 {
-    font-size: 55px !important; 
-}
+.reveal .controls { color: var(--accent); }
+
 /* =========================================
    PERSISTENT TEACHING FOOTER
    ========================================= */
@@ -160,22 +70,70 @@ h3 {
     bottom: 20px;
     left: 40px;
     right: 40px;
-    z-index: 1000; /* Stays on top of the slides */
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px; /* Small and professional */
-    color: #475569; /* Subtle gray so it doesn't distract from the main text */
-    pointer-events: none; /* Allows you to click "through" it to use slide controls */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Very faint line above it */
+    font-size: 14px;
+    color: #475569;
+    pointer-events: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 10px;
 }
 
-.footer-left {
-    font-weight: 600;
-}
+.footer-left { font-weight: 600; }
+.footer-right { text-transform: uppercase; letter-spacing: 1px; }
 
-.footer-right {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* =========================================
+   MOBILE & TABLET RESPONSIVE DESIGN (PORTRAIT)
+   ALWAYS KEEP THIS AT THE VERY BOTTOM!
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .split {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        max-height: 100% !important;
+        width: 100% !important;
+    }
+
+    .split > div, .glass-card {
+        width: 100% !important;
+        padding: 15px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Shrink the massive desktop headings */
+    h2 { font-size: 35px !important; }
+    h3 { font-size: 24px !important; text-align: center !important; line-height: 1.2 !important;}
+
+    /* Force the paragraph and list text to be small on mobile */
+    .glass-card { font-size: 16px !important; }
+    .glass-card p { font-size: 16px !important; margin-bottom: 10px !important; }
+    .auto-appear li { font-size: 15px !important; margin-bottom: 8px !important; }
+
+    /* Fix image sizing */
+    .split img {
+        height: 180px !important; 
+        min-height: 180px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* Keep controls out of the way */
+    .reveal .controls {
+        bottom: 5px !important;
+        right: 5px !important;
+    }
+
+    /* Stack and shrink the footer so it fits on a phone screen */
+    #teaching-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 5px;
+    }
 }

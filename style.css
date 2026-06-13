@@ -84,56 +84,19 @@ h3 { font-size: 55px !important; }
 .footer-left { font-weight: 600; }
 .footer-right { text-transform: uppercase; letter-spacing: 1px; }
 
-/* =========================================
-   MOBILE & TABLET RESPONSIVE DESIGN (PORTRAIT)
-   ALWAYS KEEP THIS AT THE VERY BOTTOM!
-   ========================================= */
-@media screen and (max-width: 768px) {
-    .split {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        max-height: 100% !important;
-        width: 100% !important;
-    }
-
-    .split > div, .glass-card {
-        width: 100% !important;
-        padding: 15px !important;
-        margin: 0 auto !important;
+@media screen and (orientation: portrait) {
+    /* Rotate the entire body to look landscape while holding phone upright */
+    body {
+        transform: rotate(90deg);
+        transform-origin: top left;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     
-    /* Shrink the massive desktop headings */
-    h2 { font-size: 35px !important; }
-    h3 { font-size: 24px !important; text-align: center !important; line-height: 1.2 !important;}
-
-    /* Force the paragraph and list text to be small on mobile */
-    .glass-card { font-size: 16px !important; }
-    .glass-card p { font-size: 16px !important; margin-bottom: 10px !important; }
-    .auto-appear li { font-size: 15px !important; margin-bottom: 8px !important; }
-
-    /* Fix image sizing */
-    .split img {
-        height: 180px !important; 
-        min-height: 180px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-    }
-
-    /* Keep controls out of the way */
-    .reveal .controls {
-        bottom: 5px !important;
-        right: 5px !important;
-    }
-
-    /* Stack and shrink the footer so it fits on a phone screen */
-    #teaching-footer {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        font-size: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 5px;
-    }
+    /* Hide the button so it doesn't look weird when rotated */
+    .fs-button { display: none !important; }
 }
